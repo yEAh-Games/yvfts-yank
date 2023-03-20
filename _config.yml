@@ -1,22 +1,18 @@
 # ----
 # Site
 
-title: Aperture Template
-url: "https://cosmic-hippopotamus.cloudvent.net"
+title: YVFTs / Yank / yEAh Network
+url: "https://yvfts.i.yank.yeahgames.net"
 baseurl:
 google_analytics_key:
 
 # Values for the jekyll-seo-tag gem (https://github.com/jekyll/jekyll-seo-tag)
 logo: /siteicon.png
-description: Photography portfolio template for Jekyll.
+description: Invest in yEAh Very-Fungible Tokens (YVFTs). Browse the collection or invest in some yourself!
 author:
   name:
   email:
   twitter: # twitter username without the @ symbol
-social:
-  name: Aperture Template
-  links:
-    - https://github.com/CloudCannon/aperture-jekyll-template
 
 # -----
 # Build
@@ -32,7 +28,7 @@ defaults:
     values:
       layout: "default"
       text_width: true
-      image: /uploads/1.jpg
+      image: /yvfts/:collection:/1.jpg
   -
     scope:
       path: "index.html"
