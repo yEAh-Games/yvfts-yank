@@ -14,6 +14,12 @@
 		right: $offset;
 		font-size: 1.5em;
 	}
+	.buy {
+		position: absolute;
+		top: $offset;
+		right: 110px;
+		font-size: 1.5em;
+	}
 
 	.close, .next, .prev {
 		color: #fff;
