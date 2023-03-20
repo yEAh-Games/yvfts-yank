@@ -28,7 +28,7 @@ defaults:
     values:
       layout: "default"
       text_width: true
-      image: /yvfts/:collection:/1.jpg
+      image: /items/1.png
   -
     scope:
       path: "index.html"
