@@ -1,25 +1,61 @@
-# Base configs
-baseurl: "https://photography.rampatra.com"
-image_fulls_loc: "/images/fulls"
-image_thumbs_loc: "/images/thumbs"
-google_analytics: "UA-46465113-2"
+# ----
+# Site
 
-# UI configs
-title: "Photography by Ram Patra"
-subtitle: "See the world through my eyes!"
-author: "Ram Patra"
-header:
- title: "Photography"
- subtitle: "by Ram Patra"
-footer:
- name: "Hey there, my name is Ram"
- bio: "I am a developer and a tech aficionado from India. Love making teeny tiny apps solving tiny problems in life and now learning photography."
- github: "Want a website like this for yourself for free? Just <a href=\"https://github.com/ramswaroop/photography\">fork me on github</a> ;)"
-web_design: "AJ"
-social_urls:
-  facebook: "https://www.facebook.com/ramswaroop"
-  twitter: "https://www.twitter.com/ram__patra"
-  instagram: "https://www.instagram.com/ram_patra"
-  dribbble: "https://dribbble.com/rampatra"
-  linkedin: "https://in.linkedin.com/in/ram-patra"
-  github: "https://www.github.com/rampatra"
+title: Aperture Template
+url: "https://cosmic-hippopotamus.cloudvent.net"
+baseurl:
+google_analytics_key:
+
+# Values for the jekyll-seo-tag gem (https://github.com/jekyll/jekyll-seo-tag)
+logo: /siteicon.png
+description: Photography portfolio template for Jekyll.
+author:
+  name:
+  email:
+  twitter: # twitter username without the @ symbol
+social:
+  name: Aperture Template
+  links:
+    - https://github.com/CloudCannon/aperture-jekyll-template
+
+# -----
+# Build
+
+timezone: Etc/UTC
+
+permalink: pretty
+
+defaults:
+  -
+    scope:
+      path: ""
+    values:
+      layout: "default"
+      text_width: true
+      image: /uploads/1.jpg
+  -
+    scope:
+      path: "index.html"
+    values:
+      text_width: false
+
+plugins:
+  - jekyll-sitemap
+  - jekyll-seo-tag
+
+exclude:
+  - Gemfile
+  - Gemfile.lock
+  - README.md
+  - LICENCE
+
+# -----------
+# CloudCannon
+
+_options:
+  image:
+    width: 2048
+    height: 1365
+    resize_style: "contain"
+    mime_type: "image/jpeg"
+    expandable: true
