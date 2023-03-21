@@ -126,6 +126,15 @@ photos:
 	<a class="prev">&lsaquo;</a>
 	<a class="next">&rsaquo;</a>
 	<p class="caption"></p>
+  <button onclick="replaceUrl()">Click me</button>
+
+<script>
+function replaceUrl() {
+  var currentUrl = window.location.href;
+  var newUrl = currentUrl.replace("#yvfts-preview-", "yvfts/details/");
+  window.location.href = newUrl;
+}
+</script>
 	<img>
 </div>
 
