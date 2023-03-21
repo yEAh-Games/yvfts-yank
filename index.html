@@ -126,7 +126,8 @@ photos:
 	<a class="prev">&lsaquo;</a>
 	<a class="next">&rsaquo;</a>
 	<p class="caption"></p>
-  <button class="button buy" onclick="replaceUrl()">Buy</button>
+  <button style="background-color:#5e9c00!important;" class="button buy" onclick="buyUrl()">Buy</button><button class="button buy" onclick="replaceUrl()">Details</button>  
+
 
 <script>
 function replaceUrl() {
@@ -135,6 +136,13 @@ function replaceUrl() {
   window.location.href = newUrl;
 }
 </script>
+<script>
+  function buyUrl() {
+    var currentUrl = window.location.href;
+    var newUrl = currentUrl.replace("#yvfts-preview-", "yvfts/buy/id/").replace("-png", "");
+    window.location.href = newUrl;
+  }
+  </script>
 	<img>
 </div>
 
