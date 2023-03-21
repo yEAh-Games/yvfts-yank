@@ -41,6 +41,8 @@ defaults:
 plugins:
   - jekyll-sitemap
   - jekyll-seo-tag
+  - jekyll-paginate
+  - jekyll-feed
 
 exclude:
   - Gemfile
