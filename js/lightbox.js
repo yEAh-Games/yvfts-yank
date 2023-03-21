@@ -2,6 +2,7 @@
 	var $overlay = $(".overlay"),
 		$overlayImage = $overlay.find("img"),
 		$caption = $overlay.find('.caption'),
+		$link = $overlay.find('.link'),
 		$body = $("body"),
 		$close = $overlay.find('.close'),
 		$next = $overlay.find('.next'),
