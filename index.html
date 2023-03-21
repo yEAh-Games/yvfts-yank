@@ -102,13 +102,10 @@ photos:
 </style>
 <ul class="gallery">
 	{% for photo in page.photos %}
-		<li style="background-image: url('{{ site.baseurl }}{{ photo.image | resize: "800x800>" }}"><button id="myButton">TestButton</button>
+		<li style="background-image: url('{{ site.baseurl }}{{ photo.image | resize: "800x800>" }}"><button onclick="myButton()">TestButton</button>
       <a title="{{ photo.caption }}" href="{{ site.baseurl }}{{ photo.image }}" data-id="#{{ photo.image | slugify }}" data-caption="{{ photo.caption }}"></a>  
     </li>
     <script>
-      // get a reference to the button element
-      const myButton = document.getElementById('myButton');
-    
       // attach an event listener to the button
       myButton.addEventListener('click', function() {
         // navigate to the desired URL in the parent window
