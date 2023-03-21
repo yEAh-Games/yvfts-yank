@@ -128,18 +128,10 @@ Gallery: <b>ALL</b>
 <script>
 function replaceUrl() {
   var currentUrl = window.location.href;
-  var newUrl = currentUrl.replace("#yvfts-preview-", "yvfts/details/id/").replace("-png", "");
+  var newUrl = currentUrl.replace("#yvfts-preview-", "yvfts/details/id/").replace("-png", "").replace("-webp","");
   window.location.href = newUrl;
 }
 </script>
-<script>
-  function buyUrl() {
-    var currentUrl = window.location.href;
-    var newUrl = currentUrl.replace("#yvfts-preview-", "yvfts/buy/id/").replace("-png", "");
-    window.location.href = newUrl;
-  }
-  </script>
-	<img>
 </div>
 
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
