@@ -90,36 +90,38 @@ photos:
   opacity: 1;
   right: 0;
 }
+.lazy-background {
+  background-image: url("https://www.slntechnologies.com/wp-content/uploads/2017/08/ef3-placeholder-image.jpg"); /* Placeholder image */
+}
+
+.lazy-background.visible {
+  background-image: url("{{ site.baseurl }}{{ photo.image | resize: '800x800>' }}"); /* The final image */
+}
 </style>
 <script>
-  document.addEventListener("DOMContentLoaded", function() {
-  var lazyImages = [].slice.call(document.querySelectorAll("img.lazy"));
+document.addEventListener("DOMContentLoaded", function() {
+  var lazyBackgrounds = [].slice.call(document.querySelectorAll(".lazy-background"));
 
   if ("IntersectionObserver" in window) {
-    let lazyImageObserver = new IntersectionObserver(function(entries, observer) {
+    let lazyBackgroundObserver = new IntersectionObserver(function(entries, observer) {
       entries.forEach(function(entry) {
         if (entry.isIntersecting) {
-          let lazyImage = entry.target;
-          lazyImage.src = lazyImage.dataset.src;
-          lazyImage.srcset = lazyImage.dataset.srcset;
-          lazyImage.classList.remove("lazy");
-          lazyImageObserver.unobserve(lazyImage);
+          entry.target.classList.add("visible");
+          lazyBackgroundObserver.unobserve(entry.target);
         }
       });
     });
 
-    lazyImages.forEach(function(lazyImage) {
-      lazyImageObserver.observe(lazyImage);
+    lazyBackgrounds.forEach(function(lazyBackground) {
+      lazyBackgroundObserver.observe(lazyBackground);
     });
-  } else {
-    // Possibly fall back to event handlers here
   }
 });
 </script>
 Gallery: <b>ALL</b>
 <ul class="gallery">
 	{% for photo in page.photos %}
-		<li class="lazy" loading="lazy" style="background-image: url('{{ site.baseurl }}{{ photo.image | resize: "800x800>" }}">
+		<li class="lazy-background" loading="lazy">
       <a title="{{ photo.caption }}" href="{{ site.baseurl }}{{ photo.image }}" data-id="#{{ photo.image | slugify }}" data-caption="{{ photo.caption }}"></a>  
     </li>
 	{% endfor %}
