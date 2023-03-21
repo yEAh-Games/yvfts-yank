@@ -72,12 +72,13 @@ photos:
   transition: all 0.5s;
   cursor: pointer;
   margin: 5px;
+  position: absolute
 }
 
 .button span {
   cursor: pointer;
   display: inline-block;
-  position: relative;
+  position: absolute;
   transition: 0.5s;
 }
 
@@ -101,8 +102,20 @@ photos:
 </style>
 <ul class="gallery">
 	{% for photo in page.photos %}
-		<li style="background-image: url('{{ site.baseurl }}{{ photo.image | resize: "800x800>" }}')"><a title="{{ photo.caption }}" href="{{ site.baseurl }}{{ photo.image }}" data-id="#{{ photo.image | slugify }}" data-caption="{{ photo.caption }}"></a>  <a href="{{photo.image}}"><button class="button buy"><span>Buy</span></button>  </a>
-    </li>
+		<li style="background-image: url('{{ site.baseurl }}{{ photo.image | resize: "800x800>" }}')"><button id="myButton">TestButton</button>
+
+      <script>
+        // get a reference to the button element
+        const myButton = document.getElementById('myButton');
+      
+        // attach an event listener to the button
+        myButton.addEventListener('click', function() {
+          // navigate to the desired URL in the parent window
+          window.parent.location.href = '{{photo.link}}';
+        });
+      </script>
+      <a title="{{ photo.caption }}" href="{{ site.baseurl }}{{ photo.image }}" data-id="#{{ photo.image | slugify }}" data-caption="{{ photo.caption }}"></a>  
+    </li></div>
 	{% endfor %}
 	<li class="spacer"></li>
 	<li class="spacer"></li>
