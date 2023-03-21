@@ -1,53 +1,53 @@
 ---
 title: Gallery
 photos:
-  - image: /yvfts/preview/1.png
+  - image: /yvfts/preview/1.png.webp
     caption: Magic from @yee
-  - image: /yvfts/preview/2.png
+  - image: /yvfts/preview/2.png.webp
     caption: Cube World from @yee
-  - image: /yvfts/preview/3.png
+  - image: /yvfts/preview/3.png.webp
     caption: Grafitti 1 from @nnillat
-  - image: /yvfts/preview/4.png
+  - image: /yvfts/preview/4.png.webp
     caption: Yeed Run from @guyman147
-  - image: /yvfts/preview/5.png
+  - image: /yvfts/preview/5.png.webp
     caption: Yeed Run Yamogus from @guyman147
-  - image: /yvfts/preview/6.png
+  - image: /yvfts/preview/6.png.webp
     caption: 3-dimensional Among Us from @yee
-  - image: /yvfts/preview/7.png
+  - image: /yvfts/preview/7.png.webp
     caption: Art Moderna from @nnillat
-  - image: /yvfts/preview/8.png
+  - image: /yvfts/preview/8.png.webp
     caption: NoSpeed from @nnillat
-  - image: /yvfts/preview/9.png
+  - image: /yvfts/preview/9.png.webp
     caption: SpeMongus from @guyman147
-  - image: /yvfts/preview/10.png
+  - image: /yvfts/preview/10.png.webp
     caption: Longugus from @guyman147
-  - image: /yvfts/preview/11.png
+  - image: /yvfts/preview/11.png.webp
     caption: Suspreme from @overlordethan
-  - image: /yvfts/preview/12.png
+  - image: /yvfts/preview/12.png.webp
     caption: Stackmongus from @guyman147
-  - image: /yvfts/preview/13.png
+  - image: /yvfts/preview/13.png.webp
     caption: yEAh Game from @nnillat
-  - image: /yvfts/preview/14.png
+  - image: /yvfts/preview/14.png.webp
     caption: Pro Flag of yEAh Games from @guyman147
-  - image: /yvfts/preview/15.png
+  - image: /yvfts/preview/15.png.webp
     caption: Picachu from @yee
-  - image: /yvfts/preview/16.png
+  - image: /yvfts/preview/16.png.webp
     caption: Everyone from @guyman147
-  - image: /yvfts/preview/17.png
+  - image: /yvfts/preview/17.png.webp
     caption: Hard to Draw from @overlordethan
-  - image: /yvfts/preview/18.png
+  - image: /yvfts/preview/18.png.webp
     caption: Ripoff Ripoff Ripoff Ripoff Ripoff Dialga (Diealga) from @yee
-  - image: /yvfts/preview/19.png
+  - image: /yvfts/preview/19.png.webp
     caption: Ripoff Dialga from @yee
-  - image: /yvfts/preview/20.png
+  - image: /yvfts/preview/20.png.webp
     caption: Orangio from @yee
-  - image: /yvfts/preview/21.png
+  - image: /yvfts/preview/21.png.webp
     caption: FishC from @yee
-  - image: /yvfts/preview/22.png
+  - image: /yvfts/preview/22.png.webp
     caption: Electric Terrain from @yee
-  - image: /yvfts/preview/23.png
+  - image: /yvfts/preview/23.png.webp
     caption: Binh uses Edge haha lol bad from @yee
-  - image: /yvfts/preview/24.png
+  - image: /yvfts/preview/24.png.webp
     caption: Human Terrain from @yee
 ---
 <html>
@@ -98,7 +98,7 @@ photos:
 Gallery: <b>ALL</b>
 <ul class="gallery">
 	{% for photo in page.photos %}
-		<li style="background-image: url('https://www.slntechnologies.com/wp-content/uploads/2017/08/ef3-placeholder-image.jpg')" data-echo-background="{{ site.baseurl }}{{ photo.image | resize: "800x800>"}}">
+		<li style="background-image: url('https://cdn.yeahgames.net/img/general/placeholders/1x1.png')" data-echo-background="{{ site.baseurl }}{{ photo.image | resize: "800x800>"}}">
       <a title="{{ photo.caption }}" href="{{ site.baseurl }}{{ photo.image }}" data-id="#{{ photo.image | slugify }}" data-caption="{{ photo.caption }}"></a>  
     </li>
 	{% endfor %}
@@ -115,32 +115,6 @@ Gallery: <b>ALL</b>
 	<li class="spacer"></li>
 	<li class="spacer"></li>
 </ul>
-
-{% if paginator.total_pages > 1 %}
-<div class="pagination">
-  {% if paginator.previous_page %}
-    <a href="{{ paginator.previous_page_path | relative_url }}">&laquo; Prev</a>
-  {% else %}
-    <span>&laquo; Prev</span>
-  {% endif %}
-
-  {% for page in (1..paginator.total_pages) %}
-    {% if page == paginator.page %}
-      <em>{{ page }}</em>
-    {% elsif page == 1 %}
-      <a href="/">{{ page }}</a>
-    {% else %}
-      <a href="{{ site.paginate_path | relative_url | replace: ':num', page }}">{{ page }}</a>
-    {% endif %}
-  {% endfor %}
-
-  {% if paginator.next_page %}
-    <a href="{{ paginator.next_page_path | relative_url }}">Next &raquo;</a>
-  {% else %}
-    <span>Next &raquo;</span>
-  {% endif %}
-</div>
-{% endif %}
 
 <div class="overlay">
 	<a href="#" class="close">&#10005;</a>
