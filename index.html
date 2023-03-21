@@ -50,6 +50,8 @@ photos:
   - image: /yvfts/preview/24.png
     caption: Human Terrain from @yee
 ---
+<html>
+<head>
 <style>
 .button {
   border-radius: 4px;
@@ -90,42 +92,15 @@ photos:
   opacity: 1;
   right: 0;
 }
-
-.lazy-background {
-  background-image: url("https://www.slntechnologies.com/wp-content/uploads/2017/08/ef3-placeholder-image.jpg"); /* Placeholder image */
-}
-
 </style>
-<script>
-document.addEventListener("DOMContentLoaded", function() {
-  var lazyBackgrounds = [].slice.call(document.querySelectorAll(".lazy-background"));
-
-  if ("IntersectionObserver" in window) {
-    let lazyBackgroundObserver = new IntersectionObserver(function(entries, observer) {
-      entries.forEach(function(entry) {
-        if (entry.isIntersecting) {
-          entry.target.classList.add("visible");
-          lazyBackgroundObserver.unobserve(entry.target);
-        }
-      });
-    });
-
-    lazyBackgrounds.forEach(function(lazyBackground) {
-      lazyBackgroundObserver.observe(lazyBackground);
-    });
-  }
-});
-</script>
+</head>
+<body>
 Gallery: <b>ALL</b>
 <ul class="gallery">
 	{% for photo in page.photos %}
-		<li class="lazy-background" loading="lazy">
+		<li style="background-image: url('https://www.slntechnologies.com/wp-content/uploads/2017/08/ef3-placeholder-image.jpg')" data-echo-background="{{ site.baseurl }}{{ photo.image | resize: "800x800>"}}">
       <a title="{{ photo.caption }}" href="{{ site.baseurl }}{{ photo.image }}" data-id="#{{ photo.image | slugify }}" data-caption="{{ photo.caption }}"></a>  
     </li>
-    <style>
- .lazy-background.visible {
-  background-image: url("{{ site.baseurl }}{{ photo.image | resize: "800x800>"}}");}
-    </style>
 	{% endfor %}
 	<li class="spacer"></li>
 	<li class="spacer"></li>
@@ -206,3 +181,6 @@ function replaceUrl() {
     document.body.appendChild(script);
   }
 </script>
+{% include lazyload.html %}
+</body>
+</html>
