@@ -100,6 +100,7 @@ photos:
   right: 0;
 }
 </style>
+Gallery: <b>ALL</b>
 <ul class="gallery">
 	{% for photo in page.photos %}
 		<li style="background-image: url('{{ site.baseurl }}{{ photo.image | resize: "800x800>" }}">
