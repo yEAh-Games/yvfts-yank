@@ -126,12 +126,12 @@ photos:
 	<a class="prev">&lsaquo;</a>
 	<a class="next">&rsaquo;</a>
 	<p class="caption"></p>
-  <button class="button buy" onclick="replaceUrl()">Click me</button>
+  <button class="button buy" onclick="replaceUrl()">Buy</button>
 
 <script>
 function replaceUrl() {
   var currentUrl = window.location.href;
-  var newUrl = currentUrl.replace("#yvfts-preview-", "yvfts/details/");
+  var newUrl = currentUrl.replace("#yvfts-preview-", "yvfts/details/id/").replace("-png", "");
   window.location.href = newUrl;
 }
 </script>
